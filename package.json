@@ -11,8 +11,10 @@
   "author": "jonata-pc",
   "contributors": [],
   "dependencies": {
+    "bower": "^1.7.9",
+    "bowser": "^1.4.6",
     "gulp": "^3.9.1",
-    "gulp-connect": "^3.2.2",
+    "gulp-connect": "^3.2.3",
     "gulp-shell": "^0.5.2",
     "os": "^0.1.1"
   }
