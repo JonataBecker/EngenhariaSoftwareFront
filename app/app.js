@@ -11,6 +11,11 @@ angular.module('app', ['ui.router', 'ngResource'])
                         url: '/projeto/cadastro',
                         templateUrl: 'app/projeto/projetoCadastro.html',
                         controller: 'ProjetoCadastroController'
+                    })
+                    .state('classificacaoProjeto', {
+                        url: '/classificacao',
+                        templateUrl: 'app/classificacaoProjeto/classificacaoProjeto.html',
+                        controller: 'ClassificacaoProjetoController'
                     });
 
         });
