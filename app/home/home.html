@@ -5,23 +5,22 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<input type="text" id="busca" class="form-control" placeholder="Assunto" />
+					<input type="text" ng-model="busca" class="form-control" placeholder="Assunto" />
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Buscar</button>
 		</div>
 		<div class="row">
 			<div class="col-md-3">
 				<div class="checkbox">
 					<label>
-						<input type="checkbox"> Projeto
+						<input type="checkbox" value="true" ng-model="projeto" checked> Projeto
 					</label>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="checkbox">
 					<label>
-						<input type="checkbox"> Gestão do Conheciomento
+						<input type="checkbox" value="true" ng-model="conhecimento" checked> Gestão do Conheciomento
 					</label>
 				</div>
 			</div>
@@ -29,19 +28,13 @@
 	</form>
 	<br />
 	<div class="row list-projeto-conhecimento">
-		<div class="col-xs-6 col-lg-4 list-projeto-conhecimento-item">
+		<div class="col-xs-6 col-lg-4 list-projeto-conhecimento-item" ng-repeat="obj in info.arr | homeFilter:projeto:conhecimento | filter:busca ">
 			<div class="thumbnail">
 				<div class="caption">
-					<h4>Projetinho</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond... </p>
-					<ul>
-						<li>Conhecimento 1</li>
-						<li>Conhecimento 2</li>
-						<li>Conhecimento 3</li>
-					</ul>
+					<h4>{{obj.titulo}}</h4>
+					<p>{{obj.descricao}}</p>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>

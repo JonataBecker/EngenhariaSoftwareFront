@@ -1,27 +1,27 @@
-angular.module('app').factory('Projeto', function ($q) {
+angular.module('app').factory('Conhecimento', function ($q) {
 
 	return {
-		getProjetos: function () {
+		getConhecimentos: function () {
 			var q = $q.defer();
 			q.resolve([
 				{
-					nome: "Projeto 1",
+					nome: "Conhecimento 1",
 					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
 				},
 				{
-					nome: "Projeto 2",
+					nome: "Conhecimento 2",
 					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
 				},
 				{
-					nome: "Projeto 3",
+					nome: "Conhecimento 3",
 					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
 				},
 				{
-					nome: "Projeto 4",
+					nome: "Conhecimento 4",
 					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
 				},
 				{
-					nome: "Projeto 5",
+					nome: "Conhecimento 5",
 					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
 				}
 			]);
