@@ -2,3 +2,8 @@
 	background: #F9F9F9;
 	cursor: pointer;
 }
+
+.clicavel, .clicavel:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
