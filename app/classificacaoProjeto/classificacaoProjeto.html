@@ -1,5 +1,6 @@
 <div class="container">
-    <form method="" action="" accept-charset="UTF-8" id="form_projeto_cadastro" class="form-horizontal">
+    <form accept-charset="UTF-8" name="form_projeto_cadastro" ng-submit="salvarClassificacao(classificacao)" class="form-horizontal">
+        <input ng-model="classificacao.id" class="form-control" name="id" type="hidden">
         <div class="panel panel-default">
             <div class="panel-heading">Classificação do Projeto</div>
             <div class="panel-body">
@@ -7,13 +8,13 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <label for="classificacao_descricao" class="form-label">Descrição:</label>
-                        <input id="classificacao_descricao" class="form-control" name="descricao" type="text">
+                        <input ng-model="classificacao.descricao" class="form-control" name="descricao" type="text">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <button id="button_adicionar" type="button" class="btn btn-primary">Adicionar</button>
+                        <button  id="button_salvar" type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
                 <br>
@@ -26,13 +27,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
+                            <tr ng-repeat="classificacao in classificacoes">
+                                <td>{{ classificacao.descricao }}</td>
                                 <td class="text-center">
-                                	<a class="glyphicon glyphicon-pencil clicavel" aria-hidden="true"></a>
+                                	<a ng-click="editarClassificacao(classificacao.id)" class="glyphicon glyphicon-pencil clicavel" aria-hidden="true"></a>
                             	</td>
                             	<td class="text-center">
-                                	<a class="glyphicon glyphicon-trash clicavel" aria-hidden="true"></a>
+                                	<a ng-click="excluirClassificacao(classificacao.id)" class="glyphicon glyphicon-trash clicavel" aria-hidden="true"></a>
                                 </td>
                             </tr>
                         </tbody>
