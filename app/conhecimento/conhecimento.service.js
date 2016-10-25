@@ -26,6 +26,15 @@ angular.module('app').factory('Conhecimento', function ($q) {
 				}
 			]);
 			return q.promise;
+		},
+		getConhecimento: function (idConheciomento) {
+			var q = $q.defer();
+			q.resolve({
+					idConhecimento: 1,
+					nome: "Conhecimento 5",
+					descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
+				})
+			return q.promise;
 		}
 	}
 

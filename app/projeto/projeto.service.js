@@ -26,6 +26,14 @@ angular.module('app').factory('Projeto', function ($q) {
 				}
 			]);
 			return q.promise;
+		},
+		getProjeto: function (idProjeto) {
+			var q = $q.defer();
+			q.resolve({
+				nome: "Projeto 1",
+				descricao: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris cond",
+			});
+			return q.promise;
 		}
 	}
 
