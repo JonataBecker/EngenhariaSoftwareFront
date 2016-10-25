@@ -4,14 +4,14 @@ angular.module('app', ['ui.router', 'ngResource'])
                 $stateProvider
                         .state('home', {
                                 abstract: true,
-                                templateUrl: 'app/home/home.html',
+                                templateUrl: 'app/site/home/home.html',
                                 controller: 'HomeController'
                         })
                         .state('home.busca', {
                                 url: '/',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/home/homeBusca.html',
+                                                templateUrl: 'app/site/home/homeBusca.html',
                                                 controller: 'HomeBuscaController'
                                         }
                                 }
@@ -19,12 +19,12 @@ angular.module('app', ['ui.router', 'ngResource'])
                         })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',
-                                templateUrl: 'app/projeto/projetoCadastro.html',
+                                templateUrl: 'app/manager/projeto/projetoCadastro.html',
                                 controller: 'ProjetoCadastroController'
                         })
                         .state('classificacaoProjeto', {
                                 url: '/classificacao',
-                                templateUrl: 'app/classificacaoProjeto/classificacaoProjeto.html',
+                                templateUrl: 'app/manager/classificacaoProjeto/classificacaoProjeto.html',
                                 controller: 'ClassificacaoProjetoController'
                         });
 
