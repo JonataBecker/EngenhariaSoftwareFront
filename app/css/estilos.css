@@ -1,6 +1,10 @@
-.list-projeto-conhecimento-item :hover {
-	background: #F9F9F9;
+.lista-projeto-conhecimento-item :hover {
+	background: #F6F6F6;
 	cursor: pointer;
+}
+
+.titulo-home {
+	text-align: center;
 }
 
 .clicavel, .clicavel:hover {

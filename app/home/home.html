@@ -1,34 +1,34 @@
 <div class="container">
-	<h1>Gestão de conhecimento e Projetos</h1>
+	<h1 class="titulo-home">Gestão de conhecimento e Projetos</h1>
 	<br />
-	<form>
-		<div class="row">
-			<div class="col-md-6">
+	<div class="row">
+		<form class="col-md-8 col-md-offset-2">
+			<div class="row">
 				<div class="form-group">
 					<input type="text" ng-model="busca" class="form-control" placeholder="Assunto" />
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" value="true" ng-model="projeto" checked> Projeto
-					</label>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="true" ng-model="projeto" checked> Projeto
+						</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="true" ng-model="conhecimento" checked> Gestão do Conheciomento
+						</label>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" value="true" ng-model="conhecimento" checked> Gestão do Conheciomento
-					</label>
-				</div>
-			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 	<br />
-	<div class="row list-projeto-conhecimento">
-		<div class="col-xs-6 col-lg-4 list-projeto-conhecimento-item" ng-repeat="obj in info.arr | homeFilter:projeto:conhecimento | filter:busca ">
+	<div class="row lista-projeto-conhecimento">
+		<div class="col-xs-6 col-lg-4 lista-projeto-conhecimento-item" ng-repeat="obj in info.arr | homeFilter:projeto:conhecimento | filter:busca | orderBy:'titulo' ">
 			<div class="thumbnail">
 				<div class="caption">
 					<h4>{{obj.titulo}}</h4>
