@@ -28,7 +28,7 @@
 	</div>
 	<br />
 	<div class="row lista-projeto-conhecimento">
-		<div class="col-xs-6 col-lg-4 lista-projeto-conhecimento-item" ng-repeat="obj in info.arr | homeFilter:projeto:conhecimento | filter:busca | orderBy:'titulo' ">
+		<div class="col-xs-6 col-lg-4 lista-projeto-conhecimento-item" ng-repeat="obj in info.arr | SiteHomeFilter:projeto:conhecimento | filter:busca | orderBy:'titulo' ">
 			<div class="thumbnail">
 				<div class="caption">
 					<h4>{{obj.titulo}}</h4>
