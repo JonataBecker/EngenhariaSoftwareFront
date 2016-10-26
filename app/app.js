@@ -26,7 +26,25 @@ angular.module('app', ['ui.router', 'ngResource'])
                                 url: '/classificacao',
                                 templateUrl: 'app/manager/classificacaoProjeto/classificacaoProjeto.html',
                                 controller: 'ClassificacaoProjetoController'
-                        });
+                        })
+                        .state('manager', {
+                                abstract: true,
+                                templateUrl: 'app/manager/home/manager-home.html',
+                                controller: 'ManagerHomeController'
+                        })
+                        .state('home.busca', {
+                                url: '/',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/home/homeBusca.html',
+                                                controller: 'HomeBuscaController'
+                                        }
+                                }
+
+                        })
+
+
+                ;
 
         });
 
