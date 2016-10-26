@@ -2,17 +2,27 @@ angular.module('app', ['ui.router', 'ngResource'])
         .config(function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise('/');
                 $stateProvider
-                        .state('home', {
+                        .state('site', {
                                 abstract: true,
-                                templateUrl: 'app/site/home/home.html',
-                                controller: 'HomeController'
+                                templateUrl: 'app/site/home/site-home.html',
+                                controller: 'SiteHomeController'
                         })
-                        .state('home.busca', {
+                        .state('site.busca', {
                                 url: '/',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/home/homeBusca.html',
-                                                controller: 'HomeBuscaController'
+                                                templateUrl: 'app/site/home/site-homeBusca.html',
+                                                controller: 'SiteHomeBuscaController'
+                                        }
+                                }
+
+                        })
+                        .state('site.detalhe', {
+                                url: '/detalhe',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/projeto/site-detalhe.html',
+                                                controller: 'SiteDetalheController'
                                         }
                                 }
 

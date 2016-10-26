@@ -1,4 +1,4 @@
-angular.module('app').filter('homeFilter', function () {
+angular.module('app').filter('SiteHomeFilter', function () {
     return function (arr, projeto, conhecimento) {
         var ret = [];
         if (projeto) {

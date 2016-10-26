@@ -1,4 +1,4 @@
-angular.module('app').controller('HomeBuscaController', function ($scope, Projeto, Conhecimento) {
+angular.module('app').controller('SiteHomeBuscaController', function ($scope, Projeto, Conhecimento) {
 
 	$scope.info = {};
 	$scope.projeto = true;
