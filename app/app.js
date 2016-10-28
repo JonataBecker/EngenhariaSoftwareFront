@@ -32,25 +32,55 @@ angular.module('app', ['ui.router', 'ngResource'])
                                 templateUrl: 'app/manager/projeto/projetoCadastro.html',
                                 controller: 'ProjetoCadastroController'
                         })
-                        .state('classificacaoProjeto', {
-                                url: '/classificacao',
-                                templateUrl: 'app/manager/classificacaoProjeto/classificacaoProjeto.html',
-                                controller: 'ClassificacaoProjetoController'
-                        })
                         .state('manager', {
                                 abstract: true,
                                 templateUrl: 'app/manager/home/manager-home.html',
                                 controller: 'ManagerHomeController'
                         })
-                        .state('home.busca', {
-                                url: '/',
+                        .state('manager.home', {
+                                url: '/manager',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/home/homeBusca.html',
-                                                controller: 'HomeBuscaController'
+                                                templateUrl: 'app/manager/home/manager-home-index.html',
+                                                controller: 'ManagerHomeIndexController'
                                         }
                                 }
-
+                        })
+                        .state('manager.projeto', {
+                                url: '/manager/projeto',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/projeto/manager-projeto.html',
+                                                controller: 'ManagerProjetoController'
+                                        }
+                                }
+                        })
+                        .state('manager.projeto.form', {
+                                url: '/form/:idprojeto',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/projeto/manager-projeto-form.html',
+                                                controller: 'ManagerProjetoFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.classificacao', {
+                                url: '/manager/cadastro/classificacao',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/classificacao/manager-classificacao.html',
+                                                controller: 'ManagerClassificacaoController'
+                                        }
+                                }
+                        })
+                        .state('manager.classificacao.form', {
+                                url: '/form/:idclassificacao',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/classificacao/manager-classificacao-form.html',
+                                                controller: 'ManagerClassificacaoFormController'
+                                        }
+                                }
                         })
 
 
