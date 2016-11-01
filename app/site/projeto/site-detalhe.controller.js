@@ -1,3 +1,5 @@
-angular.module('app').controller('SiteDetalheController', function () {
+angular.module('app').controller('SiteDetalheController', function ($stateParams) {
 	
+	console.log($stateParams);
+
 });

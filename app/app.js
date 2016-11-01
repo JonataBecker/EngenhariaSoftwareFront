@@ -18,7 +18,7 @@ angular.module('app', ['ui.router', 'ngResource'])
 
                         })
                         .state('site.detalhe', {
-                                url: '/detalhe',
+                                url: 'projeto/:idprojeto/detalhe',
                                 views: {
                                         'container': {
                                                 templateUrl: 'app/site/projeto/site-detalhe.html',

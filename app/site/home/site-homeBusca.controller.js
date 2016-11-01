@@ -1,4 +1,4 @@
-angular.module('app').controller('SiteHomeBuscaController', function ($scope, Projeto, Conhecimento) {
+angular.module('app').controller('SiteHomeBuscaController', function ($scope, Projeto, Conhecimento, $state) {
 
 	$scope.info = {};
 	$scope.projeto = true;
@@ -14,6 +14,7 @@ angular.module('app').controller('SiteHomeBuscaController', function ($scope, Pr
 		Projeto.getProjetos().then(function (projetos) {
 			projetos.forEach(function(projeto){
 				$scope.info.arr.push({
+					idprojeto : projeto.idprojeto,
 					tipo : 'projeto',
 					titulo : projeto.nome,
 					descricao : projeto.descricao
@@ -29,4 +30,10 @@ angular.module('app').controller('SiteHomeBuscaController', function ($scope, Pr
 			});
 		});
 	}
+
+	$scope.abrirDetalhe = function(projeto){
+		//console.log(projeto);
+		$state.go('site.detalhe', {idprojeto:projeto.idprojeto});
+	};
+
 });
