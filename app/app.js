@@ -27,6 +27,16 @@ angular.module('app', ['ui.router', 'ngResource'])
                                 }
 
                         })
+                        .state('site.usuarioslogin', {
+                                url: '/usuarios/login',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/site-usuariosLogin.html',
+                                                controller: 'SiteUsuariosController'
+                                        }
+                                }
+
+                        })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',
                                 templateUrl: 'app/manager/projeto/projetoCadastro.html',
