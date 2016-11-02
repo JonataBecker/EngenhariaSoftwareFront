@@ -13,7 +13,10 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#">Help</a></li>
-				<li><a href="#/usuarios/login">Login</a></li>
+				<li ng-controller="SiteUsuariosController">
+					<a href="#/usuarios/login" ng-if="!isLogged">Login</a>
+					<a ng-click="logout()" href="#" ng-if="isLogged">Logout</a>
+				</li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->
