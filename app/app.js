@@ -40,6 +40,17 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 authenticate: false
 
                         })
+                        .state('site.usuarioscadastro', {
+                                url: '/usuarios/cadastro',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/site-usuariosCadastro.html',
+                                                controller: 'SiteUsuariosController'
+                                        }
+                                },
+                                authenticate: false
+
+                        })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',
                                 templateUrl: 'app/manager/projeto/projetoCadastro.html',
