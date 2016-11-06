@@ -23,8 +23,16 @@ angular.module('app').factory('Usuario', function ($resource, $cookies) {
 		},
 		logout: function () {
 			$cookies.remove('logged-id');
+		},
+		sendPassword: function (usuario_param) {
+			var usuario = usuarios.filter( function(usuario){
+				return usuario.usuario == usuario_param || usuario.email == usuario_param;
+			});
+			if (usuario.length == 1) {
+				return true;
+			}
+			return false;
 		}
-		
 	};
 
 });
