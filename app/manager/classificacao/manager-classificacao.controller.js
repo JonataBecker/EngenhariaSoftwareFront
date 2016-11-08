@@ -1,7 +1,10 @@
 angular.module('app').controller('ManagerClassificacaoController', function ($scope, $state, Classificacao) {
 
 	$scope.itens = [];
-	loadItens();
+
+	$scope.$on('$viewContentLoaded', function(event){	
+		loadItens();
+	});
 
 	function loadItens() {
 		Classificacao.getClassificacoes().then(function (classificacoes) {
@@ -22,7 +25,7 @@ angular.module('app').controller('ManagerClassificacaoController', function ($sc
 	};
 
 	$scope.alterar = function (model) {
-		$state.go('manager.classificacao.form', {idclassificacao:model.idclassificacao});
+		$state.go('manager.classificacao.form', {idclassificacaoprojeto:model.idclassificacaoprojeto});
 	};
 
 });

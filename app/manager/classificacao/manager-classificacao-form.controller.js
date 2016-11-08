@@ -6,8 +6,8 @@ angular.module('app').controller('ManagerClassificacaoFormController', function 
 	init();
 
 	function init() {
-		if ($stateParams.idclassificacao) {
-			Classificacao.getClassificacao($stateParams.idclassificacao).then(function (obj) {
+		if ($stateParams.idclassificacaoprojeto) {
+			Classificacao.getClassificacao($stateParams.idclassificacaoprojeto).then(function (obj) {
 				$scope.model = obj;
 			}).catch(function (err) {
 				alert(err);
@@ -21,7 +21,7 @@ angular.module('app').controller('ManagerClassificacaoFormController', function 
 
 	$scope.salvar = function (model) {
 		var fn = Classificacao.gravar;
-		if ($stateParams.idclassificacao) {
+		if ($stateParams.idclassificacaoprojeto) {
 			fn = Classificacao.regravar;
 		}
 		fn(model).then(function () {

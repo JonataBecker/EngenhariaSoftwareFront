@@ -74,7 +74,7 @@ angular.module('app', ['ui.router', 'ngResource'])
                                 }
                         })
                         .state('manager.classificacao.form', {
-                                url: '/form/:idclassificacao',
+                                url: '/form/:idclassificacaoprojeto',
                                 views: {
                                         'form': {
                                                 templateUrl: 'app/manager/classificacao/manager-classificacao-form.html',
