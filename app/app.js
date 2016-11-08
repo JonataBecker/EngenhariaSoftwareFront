@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngResource'])
+angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
         .config(function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise('/');
                 $stateProvider
@@ -14,7 +14,8 @@ angular.module('app', ['ui.router', 'ngResource'])
                                                 templateUrl: 'app/site/home/site-homeBusca.html',
                                                 controller: 'SiteHomeBuscaController'
                                         }
-                                }
+                                },
+                                authenticate: false
 
                         })
                         .state('site.detalhe', {
@@ -24,18 +25,42 @@ angular.module('app', ['ui.router', 'ngResource'])
                                                 templateUrl: 'app/site/projeto/site-detalhe.html',
                                                 controller: 'SiteDetalheController'
                                         }
-                                }
+                                },
+                                authenticate: false
+
+                        })
+                        .state('site.usuarioslogin', {
+                                url: '/usuarios/login',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/site-usuariosLogin.html',
+                                                controller: 'SiteUsuariosController'
+                                        }
+                                },
+                                authenticate: false
+
+                        })
+                        .state('site.usuarioscadastro', {
+                                url: '/usuarios/cadastro',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/site-usuariosCadastro.html',
+                                                controller: 'SiteUsuariosController'
+                                        }
+                                },
+                                authenticate: false
 
                         })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',
                                 templateUrl: 'app/manager/projeto/projetoCadastro.html',
-                                controller: 'ProjetoCadastroController'
+                                controller: 'ProjetoCadastroController',
                         })
                         .state('manager', {
                                 abstract: true,
                                 templateUrl: 'app/manager/home/manager-home.html',
-                                controller: 'ManagerHomeController'
+                                controller: 'ManagerHomeController',
+                                authenticate: true
                         })
                         .state('manager.home', {
                                 url: '/manager',
@@ -86,5 +111,19 @@ angular.module('app', ['ui.router', 'ngResource'])
 
                 ;
 
+        })
+        .run(function ($rootScope, $state, Usuario) {
+                $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){        
+                        if (toState.authenticate && !Usuario.isLogged()){
+                                $state.go("site.usuarioslogin");
+                                event.preventDefault(); 
+                        }
+                        
+                        if (toState.name == 'site.usuarioslogin' && Usuario.isLogged()) {
+                                $state.go('site.busca');
+                                event.preventDefault();
+                        }
+                });
         });
 
+// angular.module("app")
