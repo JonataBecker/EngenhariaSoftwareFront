@@ -5,8 +5,12 @@ Frontend do app de Engenharia de Software II
 
 Executar com os comandos:
 ```
-npm install
-npm install bower -g
+npm install 
+npm install -g gulp
+npm install -g bower
 bower install
+gulp server
+```
+```
 python -m SimpleHTTPServer 8080
 ```
