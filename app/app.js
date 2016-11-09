@@ -107,6 +107,24 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
+                        .state('manager.recursohumano', {
+                                url: '/manager/cadastro/recurso-humano',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/recurso-humano/manager-recurso-humano.html',
+                                                controller: 'ManagerRecursoHumanoController'
+                                        }
+                                }
+                        })
+                        .state('manager.recursohumano.form', {
+                                url: '/form/:idrecursohumano',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/recurso-humano/manager-recurso-humano-form.html',
+                                                controller: 'ManagerRecursoHumanoFormController'
+                                        }
+                                }
+                        })
 
 
                 ;
