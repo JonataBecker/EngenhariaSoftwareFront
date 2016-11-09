@@ -143,6 +143,24 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
+                        .state('manager.tipocolaborador', {
+                                url: '/manager/cadastro/tipo-colaborador',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/tipo-colaborador/manager-tipo-colaborador.html',
+                                                controller: 'ManagerTipoColaboradorController'
+                                        }
+                                }
+                        })
+                        .state('manager.tipocolaborador.form', {
+                                url: '/form/:idcolaborador',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/tipo-colaborador/manager-tipo-colaborador-form.html',
+                                                controller: 'ManagerTipoColaboradorFormController'
+                                        }
+                                }
+                        })
 
 
                 ;
