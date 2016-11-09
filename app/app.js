@@ -179,6 +179,24 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
+                        .state('manager.producaoacademica', {
+                                url: '/manager/cadastro/producao-academica',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/producao-academica/manager-producao-academica.html',
+                                                controller: 'ManagerProducaoAcademicaController'
+                                        }
+                                }
+                        })
+                        .state('manager.producaoacademica.form', {
+                                url: '/form/:idproducaoacademica',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/producao-academica/manager-producao-academica-form.html',
+                                                controller: 'ManagerProducaoAcademicaFormController'
+                                        }
+                                }
+                        })
 
 
                 ;
