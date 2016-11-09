@@ -9,7 +9,7 @@ angular.module('app').controller('SiteUsuariosController', function ($scope, $st
 		$scope.success = null;
 		if (($scope.isLogged = Usuario.login($scope.model.usuario, $scope.model.senha))) {
 			$scope.error = null;
-			$state.go('site.busca');
+			$state.go('manager.home');
 		} else {
 			$scope.error = 'Erro ao realizar login. Verifique os dados informados.';
 		}
