@@ -125,6 +125,24 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
+                        .state('manager.tipoconhecimento', {
+                                url: '/manager/cadastro/tipo-conhecimento',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/tipo-conhecimento/manager-tipo-conhecimento.html',
+                                                controller: 'ManagerTipoConhecimentoController'
+                                        }
+                                }
+                        })
+                        .state('manager.tipoconhecimento.form', {
+                                url: '/form/:idconhecimento',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/tipo-conhecimento/manager-tipo-conhecimento-form.html',
+                                                controller: 'ManagerTipoConhecimentoFormController'
+                                        }
+                                }
+                        })
 
 
                 ;
