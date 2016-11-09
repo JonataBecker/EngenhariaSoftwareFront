@@ -1,4 +1,4 @@
-angular.module('app').controller('ManagerTipoColaboradorFormController', function ($scope, $state, $stateParams, TipoColaborador) {
+angular.module('app').controller('ManagerColaboradorFormController', function ($scope, $state, $stateParams, Colaborador) {
 
 	$scope.model = {};
 	var modal = angular.element('#modal');
@@ -7,7 +7,7 @@ angular.module('app').controller('ManagerTipoColaboradorFormController', functio
 
 	function init() {
 		if ($stateParams.idcolaborador) {
-			TipoColaborador.getItem($stateParams.idcolaborador).then(function (obj) {
+			Colaborador.getItem($stateParams.idcolaborador).then(function (obj) {
 				$scope.model = obj;
 			}).catch(function (err) {
 				alert(err);
@@ -15,14 +15,14 @@ angular.module('app').controller('ManagerTipoColaboradorFormController', functio
 		}
 		modal.modal('show');
 		modal.on('hidden.bs.modal', function (e) {
-			$state.go('manager.tipocolaborador');
+			$state.go('manager.colaborador');
 		});
 	}
 
 	$scope.salvar = function (model) {
-		var fn = TipoColaborador.gravar;
-		if ($stateParams.idrecursohumano) {
-			fn = TipoColaborador.regravar;
+		var fn = Colaborador.gravar;
+		if ($stateParams.idcolaborador) {
+			fn = Colaborador.regravar;
 		}
 		fn(model).then(function () {
 			modal.modal('hide');

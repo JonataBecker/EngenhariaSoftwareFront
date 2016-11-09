@@ -1,4 +1,4 @@
-angular.module('app').factory('TipoColaborador', function ($q, WebService) {
+angular.module('app').factory('Colaborador', function ($q, WebService) {
 
 	var url = 'colaborador';
 

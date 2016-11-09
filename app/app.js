@@ -143,21 +143,39 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
-                        .state('manager.tipocolaborador', {
-                                url: '/manager/cadastro/tipo-colaborador',
+                        .state('manager.colaborador', {
+                                url: '/manager/cadastro/colaborador',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/manager/tipo-colaborador/manager-tipo-colaborador.html',
-                                                controller: 'ManagerTipoColaboradorController'
+                                                templateUrl: 'app/manager/colaborador/manager-colaborador.html',
+                                                controller: 'ManagerColaboradorController'
                                         }
                                 }
                         })
-                        .state('manager.tipocolaborador.form', {
+                        .state('manager.colaborador.form', {
                                 url: '/form/:idcolaborador',
                                 views: {
                                         'form': {
-                                                templateUrl: 'app/manager/tipo-colaborador/manager-tipo-colaborador-form.html',
-                                                controller: 'ManagerTipoColaboradorFormController'
+                                                templateUrl: 'app/manager/colaborador/manager-colaborador-form.html',
+                                                controller: 'ManagerColaboradorFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.publico', {
+                                url: '/manager/cadastro/publico',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/publico/manager-publico.html',
+                                                controller: 'ManagerPublicoController'
+                                        }
+                                }
+                        })
+                        .state('manager.publico.form', {
+                                url: '/form/:idpublico',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/publico/manager-publico-form.html',
+                                                controller: 'ManagerPublicoFormController'
                                         }
                                 }
                         })
