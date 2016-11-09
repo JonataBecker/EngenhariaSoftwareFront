@@ -21,5 +21,8 @@
     "gulp-shell": "^0.5.2",
     "os": "^0.1.1",
     "serve-static": "^1.11.1"
-  }
+  },
+  "scripts": {
+      "postinstall": "bower install"
+  }  
 }
