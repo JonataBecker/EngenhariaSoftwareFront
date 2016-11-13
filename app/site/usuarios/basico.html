@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form class="form-horizontal" ng-submit="salvar(model);">
     <div class="col-sm-2 col-sm-offset-10">
         <button class="btn btn-default pull-right" type="submit">
             <i class="glyphicon glyphicon-ok-circle"></i> &nbsp; Salvar
@@ -9,30 +9,25 @@
         <h4>Vínculo</h4>
     </div>
     <div class="form-group col-sm-6">
-        <label for="tipo_vinculo" class="col-sm-4 control-label">Tipo de Vínculo</label>
+        <label for="tipo_vinculo" class="col-sm-4 control-label">Tipo de Vínculo *</label>
         <div class="col-sm-8">
-            <select class="form-control" id="tipo_vinculo">
-                <option value="">Selecione</option>
-                <option value="estudante">Estudante</option>
-                <option value="docente">Docente</option>
-                <option value="comunidade">Comunidade</option>
+            <select class="form-control" id="tipo_vinculo" ng-model="model.tipo_vinculo" ng-options="linkType.descricao for linkType in linkTypesList track by linkType.idcolaborador" ng-required="true">
+                <option value="" disabled>Selecione</option>
             </select>
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label for="intuito_academico" class="col-sm-4 control-label">Intuito Acadêmico</label>
         <div class="col-sm-8">
-            <select class="form-control" id="intuito_academico">
-                <option value="">Selecione</option>
-                <option value="icet">ICET</option>
-                <option value="ica">ICA</option>
+            <select class="form-control" id="intuito_academico" ng-model="model.intuito_academico" ng-options="item.descricao for item in academicPurposeList track by item.idintuito">
+                <option value="" disabled>Selecione</option>
             </select>
         </div>
     </div>
     <div class="form-group col-sm-6">
-        <label for="matricula" class="col-sm-4 control-label">Matrícula</label>
+        <label for="matricula" class="col-sm-4 control-label">Matrícula *</label>
         <div class="col-sm-8">
-            <input class="form-control" id="matricula" type="text"/>
+            <input class="form-control" id="matricula" ng-model="model.matricula" ng-required="true" type="text"/>
         </div>
     </div>
 
@@ -42,52 +37,52 @@
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="cpf-rne">CPF / RNE *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="cpf-rne">
+            <input type="text" class="form-control" id="cpf-rne" ng-model="model.cpfrne" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <div class="checkbox">
             <span class="control-label col-sm-4"> &nbsp;</span>
             <label class="col-sm-8">
-                <input type="checkbox" value="1" id="administrador"> Administrador
+                <input type="checkbox" value="1" id="administrador" ng-model="model.administrador"> Administrador
             </label>
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="nome">Nome *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="nome">
-        </div>
-    </div>
-    <div class="form-group col-sm-6">
-        <label class="col-sm-4 control-label" for="rg">RG</label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" id="rg">
+            <input type="text" class="form-control" id="nome" ng-model="model.nome" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="sobrenome">Sobrenome *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="sobrenome">
+            <input type="text" class="form-control" id="sobrenome" ng-model="model.sobrenome" ng-required="true">
+        </div>
+    </div>
+    <div class="form-group col-sm-6">
+        <label class="col-sm-4 control-label" for="rg">RG</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="rg" ng-model="model.rg">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="datanascimento">Data de Nasc. *</label>
         <div class="col-sm-8">
-            <input type="date" class="form-control" id="datanascimento">
+            <input type="date" class="form-control" id="datanascimento" ng-model="model.datanascimento" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="estadocivil">Estado Civil</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="estadocivil">
+            <input type="text" class="form-control" id="estadocivil" ng-model="model.estadocivil">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label for="sexo" class="col-sm-4 control-label">Sexo *</label>
         <div class="col-sm-8">
-            <select class="form-control" id="sexo">
-                <option value="">Selecione</option>
+            <select class="form-control" id="sexo" ng-model="model.sexo" ng-required="true">
+                <option value="" disabled>Selecione</option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
             </select>
@@ -100,7 +95,7 @@
     <div class="form-group col-sm-6">
         <label for="pais" class="col-sm-4 control-label">País *</label>
         <div class="col-sm-8">
-            <select class="form-control" id="pais">
+            <select class="form-control" id="pais" ng-model="model.pais" ng-required="true">
                 <option value="brasil">Brasil</option>
             </select>
         </div>
@@ -108,31 +103,31 @@
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="cep">CEP *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="cep">
+            <input type="text" class="form-control" id="cep" ng-model="model.cep" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="estado">Estado *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="estado">
+            <input type="text" class="form-control" id="estado" ng-model="model.estado" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="cidade">Cidade *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="cidade">
+            <input type="text" class="form-control" id="cidade" ng-model="model.cidade" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="bairro">Bairro *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="bairro">
+            <input type="text" class="form-control" id="bairro" ng-model="model.bairro" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="logradouro">Logradouro *</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="logradouro">
+            <input type="text" class="form-control" id="logradouro" ng-model="model.logradouro" ng-required="true">
         </div>
     </div>
 
@@ -142,19 +137,19 @@
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="email">Email *</label>
         <div class="col-sm-8">
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="email" ng-model="model.email" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="telefone">Telefone</label>
         <div class="col-sm-8">
-            <input type="tel" class="form-control" id="telefone">
+            <input type="tel" class="form-control" id="telefone" ng-model="model.telefone">
         </div>
     </div>
     <div class="form-group col-sm-6">
         <label class="col-sm-4 control-label" for="celular">Celular</label>
         <div class="col-sm-8">
-            <input type="tel" class="form-control" id="celular">
+            <input type="tel" class="form-control" id="celular" ng-model="model.celular">
         </div>
     </div>
 
@@ -164,19 +159,19 @@
     <div class="form-group col-sm-12">
         <label class="col-sm-2 control-label" for="usuario">Usuário</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="usuario">
+            <input type="text" class="form-control" id="usuario" ng-model="model.usuario">
         </div>
     </div>
     <div class="form-group col-sm-12">
         <label class="col-sm-2 control-label" for="senha">Senha *</label>
         <div class="col-sm-4">
-            <input type="password" class="form-control" id="senha">
+            <input type="password" class="form-control" id="senha" ng-model="model.senha" ng-required="true">
         </div>
     </div>
     <div class="form-group col-sm-12 col-sm-offset-6">
         <label class="col-sm-2 control-label" for="validacaosenha">Validação Senha *</label>
         <div class="col-sm-4">
-            <input type="password" class="form-control" id="validacaosenha">
+            <input type="password" class="form-control" id="validacaosenha" ng-model="model.validacaosenha" ng-required="true">
         </div>
     </div>
     <div class="col-sm-2 col-sm-offset-10">

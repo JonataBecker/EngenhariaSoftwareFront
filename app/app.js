@@ -34,7 +34,7 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 views: {
                                         'container': {
                                                 templateUrl: 'app/site/usuarios/login.html',
-                                                controller: 'SiteUsuariosController'
+                                                controller: 'SiteUsuariosLoginController'
                                         }
                                 },
                                 authenticate: false
@@ -45,7 +45,7 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 views: {
                                         'container': {
                                                 templateUrl: 'app/site/usuarios/cadastro.html',
-                                                controller: 'SiteUsuariosController'
+                                                controller: 'SiteUsuariosCadastroController'
                                         }
                                 }
                         })
@@ -54,7 +54,7 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 views: {
                                         'container': {
                                                 templateUrl: 'app/site/usuarios/basico.html',
-                                                controller: 'SiteUsuariosController'
+                                                controller: 'SiteUsuariosCadastroController'
                                         }
                                 },
                                 authenticate: false
@@ -65,7 +65,7 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 views: {
                                         'container': {
                                                 templateUrl: 'app/site/usuarios/competencias.html',
-                                                controller: 'SiteUsuariosController'
+                                                controller: 'SiteUsuariosCadastroController'
                                         }
                                 },
                                 authenticate: true

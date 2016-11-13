@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav">
 				<li ui-sref-active="active" ui-nested><a ui-sref="site.busca">Home</a></li>
 				<li><a href="#">Help</a></li>
-				<li ui-sref-active="active" ui-nested ng-controller="SiteUsuariosController">
+				<li ui-sref-active="active" ui-nested ng-controller="SiteUsuariosLoginController">
 					<a ui-sref="site.usuarioslogin" ng-hide="isLogged">Login</a>
 					<a ng-click="logout()" href="#" ng-show="isLogged">Olá Teste - Logout</a>
 				</li>

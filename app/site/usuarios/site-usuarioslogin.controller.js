@@ -1,8 +1,9 @@
-angular.module('app').controller('SiteUsuariosController', function ($scope, $state, Usuario) {
+angular.module('app').controller('SiteUsuariosLoginController', function ($scope, $state, Usuario) {
 	// console.log($scope);
 	$scope.model = {};
 	$scope.error = null;
 	$scope.isLogged = Usuario.isLogged();
+	// $scope.linkTypesList = ;
 	
 	$scope.login = function () {
 		$scope.error = null;
@@ -14,6 +15,7 @@ angular.module('app').controller('SiteUsuariosController', function ($scope, $st
 			$scope.error = 'Erro ao realizar login. Verifique os dados informados.';
 		}
 	}
+	
 	$scope.logout = function () {
 		$scope.error = null;
 		$scope.success = null;
@@ -21,6 +23,7 @@ angular.module('app').controller('SiteUsuariosController', function ($scope, $st
 		$scope.isLogged = Usuario.isLogged();
 		$state.go('site.usuarioslogin');
 	}
+
 	$scope.passwordRecover = function () {
 		$scope.error = null;
 		$scope.success = null;
@@ -30,4 +33,5 @@ angular.module('app').controller('SiteUsuariosController', function ($scope, $st
 			$scope.error = 'Usuário não encontrado.';
 		}
 	}
+	
 });
