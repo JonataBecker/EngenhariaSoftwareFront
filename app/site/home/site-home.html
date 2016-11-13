@@ -14,8 +14,8 @@
 				<li ui-sref-active="active" ui-nested><a ui-sref="site.busca">Home</a></li>
 				<li><a href="#">Help</a></li>
 				<li ui-sref-active="active" ui-nested ng-controller="SiteUsuariosController">
-					<a ui-sref="site.usuarioslogin" ng-if="!isLogged">Login {{$state}}</a>
-					<a ng-click="logout()" href="#" ng-if="isLogged">Olá Teste - Logout</a>
+					<a ui-sref="site.usuarioslogin" ng-hide="isLogged">Login</a>
+					<a ng-click="logout()" href="#" ng-show="isLogged">Olá Teste - Logout</a>
 				</li>
 			</ul>
 		</div>
