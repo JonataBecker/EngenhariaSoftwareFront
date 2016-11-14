@@ -33,23 +33,42 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 url: '/usuarios/login',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/usuarios/site-usuariosLogin.html',
-                                                controller: 'SiteUsuariosController'
+                                                templateUrl: 'app/site/usuarios/login.html',
+                                                controller: 'SiteUsuariosLoginController'
                                         }
                                 },
                                 authenticate: false
 
                         })
                         .state('site.usuarioscadastro', {
+                                abstract: true,
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/cadastro.html',
+                                                controller: 'SiteUsuariosCadastroController'
+                                        }
+                                }
+                        })
+                        .state('site.usuarioscadastro.basico', {
                                 url: '/usuarios/cadastro',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/usuarios/site-usuariosCadastro.html',
-                                                controller: 'SiteUsuariosController'
+                                                templateUrl: 'app/site/usuarios/basico.html',
+                                                controller: 'SiteUsuariosCadastroController'
                                         }
                                 },
                                 authenticate: false
 
+                        })
+                        .state('site.usuarioscadastro.competencias', {
+                                url: '/usuarios/cadastro/competencias',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/competencias.html',
+                                                controller: 'SiteUsuariosCadastroController'
+                                        }
+                                },
+                                authenticate: true
                         })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',

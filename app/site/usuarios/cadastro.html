@@ -1,0 +1,21 @@
+<div class="container">
+	<style type="text/css">
+		h4 {margin-bottom: 20px;padding-bottom: 5px; border-bottom: 2px solid #337ab7;}
+	</style>
+	<h1>Cadastro</h1>
+	<div class="col-sm-12">
+        <div ng-hide="error == null" class="alert alert-danger col-sm-12" class="alert alert-danger">{{error}}</div>
+        <ul class="nav nav-tabs">
+        	<li ui-sref-active="active" ui-nested role="navigation">
+        		<a ui-sref="site.usuarioscadastro.basico" title="Dados Pessoais">Dados Pessoais</a>
+    		</li>
+        	<li ui-sref-active="active" ui-nested role="navigation" ng-class="{disabled:!isLogged}">
+        		<a ui-sref="site.usuarioscadastro.competencias" ng-show="isLogged" title="Competências">Competências</a>
+        		<a ng-hide="isLogged" title="Competências">Competências</a>
+    		</li>
+        </ul>
+	    <div class="panel panel-primary">
+	        <div class="panel-body" ui-view="container"></div>    
+    	</div>
+    </div>
+</div>

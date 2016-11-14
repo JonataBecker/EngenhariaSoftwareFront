@@ -1,4 +1,4 @@
-angular.module('app').factory('Usuario', function ($resource, $cookies) {
+angular.module('app').factory('Usuario', function ($resource, WebService, $cookies) {
 
 	var usuarios = [{
 		id: 1,
@@ -7,7 +7,27 @@ angular.module('app').factory('Usuario', function ($resource, $cookies) {
 		senha: "teste"
 	}];
 
+	var url = "usuario";
+
 	return {
+		gravar: function (obj) {
+			var q = $q.defer();
+			WebService.post(url + '/novo', obj).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
+				q.reject(err);
+			});
+			return q.promise;
+		},
+		regravar: function (obj) {
+			var q = $q.defer();
+			WebService.post(url + '/atualiza', obj).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
+				q.reject(err);
+			});
+			return q.promise;
+		},
 		isLogged: function () {
 			return $cookies.get('logged-id') ? true : false;
 		},
