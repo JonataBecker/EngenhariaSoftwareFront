@@ -15,3 +15,21 @@
 .btn-grid {
 	float: right;
 }
+
+.navbar-site {
+	min-height: 85px
+}
+
+@media (min-width: 768px) {
+.navbar-site .navbar-nav>li>a {
+	padding-top: 33px;
+	padding-bottom: 32px;
+}
+}
+.navbar-site .navbar-toggle {
+	margin-top: 25px;
+}
+
+.navbar-site .navbar-brand {
+	height: 85px;
+}
