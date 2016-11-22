@@ -4,7 +4,8 @@ angular.module('app').factory('Usuario', function ($resource, WebService, $cooki
 		id: 1,
 		email: "teste@teste.com.br",
 		usuario: "admin",
-		senha: "teste"
+		senha: "teste",
+		nome: "Admin"
 	}];
 
 	var url = "usuario";
@@ -52,6 +53,13 @@ angular.module('app').factory('Usuario', function ($resource, WebService, $cooki
 				return true;
 			}
 			return false;
+		},
+		getLoggedUser: function () {
+			var logged_id = $cookies.get('logged-id');
+			var user = usuarios.filter( function(usuario){
+				return (usuario.id == logged_id);
+			});
+			return user ? user[0] : null;
 		}
 	};
 

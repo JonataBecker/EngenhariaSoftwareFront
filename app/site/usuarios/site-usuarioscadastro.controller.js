@@ -12,7 +12,7 @@ angular.module('app').controller('SiteUsuariosCadastroController', function ($sc
 		Colaborador.getItens().then(function (recursos) {
 			$scope.linkTypesList = recursos;
 		});
-		$scope.academicPurposeList = [{idintuito: 1, descricao:'ICET'}, {idintuito: 2, descricao:'ICA'}]
+		$scope.academicPurposeList = [{idintuito: 1, descricao:'ICET'}, {idintuito: 2, descricao:'ICA'}];
 	}
 
 	$scope.salvar = function (model) {

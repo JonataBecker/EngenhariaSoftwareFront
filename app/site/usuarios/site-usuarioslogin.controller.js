@@ -3,6 +3,7 @@ angular.module('app').controller('SiteUsuariosLoginController', function ($scope
 	$scope.model = {};
 	$scope.error = null;
 	$scope.isLogged = Usuario.isLogged();
+	$scope.user = Usuario.getLoggedUser();
 	// $scope.linkTypesList = ;
 	
 	$scope.login = function () {
