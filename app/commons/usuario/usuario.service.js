@@ -1,4 +1,4 @@
-angular.module('app').factory('Usuario', function ($resource, WebService, $cookies) {
+angular.module('app').factory('Usuario', function ($q, $resource, WebService, $cookies) {
 
 	var usuarios = [{
 		id: 1,
@@ -11,6 +11,15 @@ angular.module('app').factory('Usuario', function ($resource, WebService, $cooki
 	var url = "usuario";
 
 	return {
+		getUsuarios: function () {
+			var q = $q.defer();
+			WebService.get(url).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
+				q.reject(err);
+			});
+			return q.promise;
+		},
 		gravar: function (obj) {
 			var q = $q.defer();
 			WebService.post(url + '/novo', obj).then(function(data) {
