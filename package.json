@@ -13,9 +13,16 @@
   "dependencies": {
     "bower": "^1.7.9",
     "bowser": "^1.4.6",
+    "connect": "^3.5.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^3.2.3",
     "gulp-shell": "^0.5.2",
-    "os": "^0.1.1"
-  }
+    "os": "^0.1.1",
+    "serve-static": "^1.11.1"
+  },
+  "scripts": {
+      "postinstall": "bower install"
+  }  
 }

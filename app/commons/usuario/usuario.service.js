@@ -1,13 +1,34 @@
-angular.module('app').factory('Usuario', function ($resource, $cookies) {
+angular.module('app').factory('Usuario', function ($resource, WebService, $cookies) {
 
 	var usuarios = [{
 		id: 1,
 		email: "teste@teste.com.br",
 		usuario: "admin",
-		senha: "teste"
+		senha: "teste",
+		nome: "Admin"
 	}];
 
+	var url = "usuario";
+
 	return {
+		gravar: function (obj) {
+			var q = $q.defer();
+			WebService.post(url + '/novo', obj).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
+				q.reject(err);
+			});
+			return q.promise;
+		},
+		regravar: function (obj) {
+			var q = $q.defer();
+			WebService.post(url + '/atualiza', obj).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
+				q.reject(err);
+			});
+			return q.promise;
+		},
 		isLogged: function () {
 			return $cookies.get('logged-id') ? true : false;
 		},
@@ -32,6 +53,13 @@ angular.module('app').factory('Usuario', function ($resource, $cookies) {
 				return true;
 			}
 			return false;
+		},
+		getLoggedUser: function () {
+			var logged_id = $cookies.get('logged-id');
+			var user = usuarios.filter( function(usuario){
+				return (usuario.id == logged_id);
+			});
+			return user ? user[0] : null;
 		}
 	};
 

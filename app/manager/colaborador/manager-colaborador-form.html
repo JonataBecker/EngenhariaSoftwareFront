@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form ng-submit="salvar(model)" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Colaborador</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="col-md-12">
+								<label for="model_descricao" class="form-label">Descrição:</label>
+								<input ng-model="model.descricao" class="form-control" name="descricao" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						<button type="submit" class="btn btn-success">Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

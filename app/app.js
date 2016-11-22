@@ -33,23 +33,42 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                 url: '/usuarios/login',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/usuarios/site-usuariosLogin.html',
-                                                controller: 'SiteUsuariosController'
+                                                templateUrl: 'app/site/usuarios/login.html',
+                                                controller: 'SiteUsuariosLoginController'
                                         }
                                 },
                                 authenticate: false
 
                         })
                         .state('site.usuarioscadastro', {
+                                abstract: true,
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/cadastro.html',
+                                                controller: 'SiteUsuariosCadastroController'
+                                        }
+                                }
+                        })
+                        .state('site.usuarioscadastro.basico', {
                                 url: '/usuarios/cadastro',
                                 views: {
                                         'container': {
-                                                templateUrl: 'app/site/usuarios/site-usuariosCadastro.html',
-                                                controller: 'SiteUsuariosController'
+                                                templateUrl: 'app/site/usuarios/basico.html',
+                                                controller: 'SiteUsuariosCadastroController'
                                         }
                                 },
                                 authenticate: false
 
+                        })
+                        .state('site.usuarioscadastro.competencias', {
+                                url: '/usuarios/cadastro/competencias',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/usuarios/competencias.html',
+                                                controller: 'SiteUsuariosCadastroController'
+                                        }
+                                },
+                                authenticate: true
                         })
                         .state('projetoCadastro', {
                                 url: '/projeto/cadastro',
@@ -122,6 +141,96 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         'form': {
                                                 templateUrl: 'app/manager/dimensao-institucional/manager-dimensao-institucional-form.html',
                                                 controller: 'ManagerDimensaoInstitucionalFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.recursohumano', {
+                                url: '/manager/cadastro/recurso-humano',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/recurso-humano/manager-recurso-humano.html',
+                                                controller: 'ManagerRecursoHumanoController'
+                                        }
+                                }
+                        })
+                        .state('manager.recursohumano.form', {
+                                url: '/form/:idrecursohumano',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/recurso-humano/manager-recurso-humano-form.html',
+                                                controller: 'ManagerRecursoHumanoFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.tipoconhecimento', {
+                                url: '/manager/cadastro/tipo-conhecimento',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/tipo-conhecimento/manager-tipo-conhecimento.html',
+                                                controller: 'ManagerTipoConhecimentoController'
+                                        }
+                                }
+                        })
+                        .state('manager.tipoconhecimento.form', {
+                                url: '/form/:idconhecimento',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/tipo-conhecimento/manager-tipo-conhecimento-form.html',
+                                                controller: 'ManagerTipoConhecimentoFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.colaborador', {
+                                url: '/manager/cadastro/colaborador',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/colaborador/manager-colaborador.html',
+                                                controller: 'ManagerColaboradorController'
+                                        }
+                                }
+                        })
+                        .state('manager.colaborador.form', {
+                                url: '/form/:idcolaborador',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/colaborador/manager-colaborador-form.html',
+                                                controller: 'ManagerColaboradorFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.publico', {
+                                url: '/manager/cadastro/publico',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/publico/manager-publico.html',
+                                                controller: 'ManagerPublicoController'
+                                        }
+                                }
+                        })
+                        .state('manager.publico.form', {
+                                url: '/form/:idpublico',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/publico/manager-publico-form.html',
+                                                controller: 'ManagerPublicoFormController'
+                                        }
+                                }
+                        })
+                        .state('manager.producaoacademica', {
+                                url: '/manager/cadastro/producao-academica',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/producao-academica/manager-producao-academica.html',
+                                                controller: 'ManagerProducaoAcademicaController'
+                                        }
+                                }
+                        })
+                        .state('manager.producaoacademica.form', {
+                                url: '/form/:idproducaoacademica',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/producao-academica/manager-producao-academica-form.html',
+                                                controller: 'ManagerProducaoAcademicaFormController'
                                         }
                                 }
                         })
