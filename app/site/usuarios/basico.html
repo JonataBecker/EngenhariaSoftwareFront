@@ -1,4 +1,5 @@
 <form class="form-horizontal" ng-submit="salvar(model);">
+    <div ng-hide="error == null" class="alert alert-danger col-sm-12">{{error}}</div>
     <div class="col-sm-2 col-sm-offset-10">
         <button class="btn btn-default pull-right" type="submit">
             <i class="glyphicon glyphicon-ok-circle"></i> &nbsp; Salvar
@@ -9,17 +10,17 @@
         <h4>Vínculo</h4>
     </div>
     <div class="form-group col-sm-6">
-        <label for="tipo_vinculo" class="col-sm-4 control-label">Tipo de Vínculo *</label>
+        <label for="tipoVinculo" class="col-sm-4 control-label">Tipo de Vínculo *</label>
         <div class="col-sm-8">
-            <select class="form-control" id="tipo_vinculo" ng-model="model.tipo_vinculo" ng-options="linkType.descricao for linkType in linkTypesList track by linkType.idcolaborador" ng-required="true">
+            <select class="form-control" id="tipoVinculo" ng-model="model.tipoVinculo" ng-options="linkType.descricao for linkType in linkTypesList track by linkType.idcolaborador" ng-required="true">
                 <option value="" disabled>Selecione</option>
             </select>
         </div>
     </div>
     <div class="form-group col-sm-6">
-        <label for="intuito_academico" class="col-sm-4 control-label">Intuito Acadêmico</label>
+        <label for="instituto_academico" class="col-sm-4 control-label">Instituto Acadêmico</label>
         <div class="col-sm-8">
-            <select class="form-control" id="intuito_academico" ng-model="model.intuito_academico" ng-options="item.descricao for item in academicPurposeList track by item.idintuito">
+            <select class="form-control" id="instituto_academico" ng-model="model.instituto_academico" ng-options="item.descricao for item in academicInstituteList track by item.idinstituto">
                 <option value="" disabled>Selecione</option>
             </select>
         </div>
