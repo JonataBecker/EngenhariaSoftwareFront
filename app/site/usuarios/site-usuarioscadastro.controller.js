@@ -4,7 +4,7 @@ angular.module('app').controller('SiteUsuariosCadastroController', function ($sc
 	$scope.error = null;
 	$scope.isLogged = Usuario.isLogged();
 	$scope.linkTypesList = [];
-	$scope.academicPurposeList = [];
+	$scope.academicInstituteList = [];
 	
 	loadRelationItems();
 	
@@ -12,11 +12,20 @@ angular.module('app').controller('SiteUsuariosCadastroController', function ($sc
 		Colaborador.getItens().then(function (recursos) {
 			$scope.linkTypesList = recursos;
 		});
-		$scope.academicPurposeList = [{idintuito: 1, descricao:'ICET'}, {idintuito: 2, descricao:'ICA'}]
+		$scope.academicInstituteList = [{idinstituto: 1, descricao:'ICET'}, {idinstituto: 2, descricao:'ICA'}];
 	}
 
 	$scope.salvar = function (model) {
-		console.log(model);
+		var fn = Usuario.gravar;
+		if (Usuario.isLogged()) {
+			fn = Usuario.regravar;
+		}
+		fn(model).then(function () {
+			alert('login');
+			// modal.modal('hide');
+		}).catch(function (err) {
+			alert(err);
+		});
 	}
 	
 });

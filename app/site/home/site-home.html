@@ -8,7 +8,7 @@
 			<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="/app/img/logo.png" />
+				<img src="app/img/logo.png" />
 			</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
@@ -16,7 +16,7 @@
 				<li ui-sref-active="active" ui-nested><a ui-sref="site.busca">Home</a></li>
 				<li ui-sref-active="active" ui-nested ng-controller="SiteUsuariosLoginController">
 					<a ui-sref="site.usuarioslogin" ng-hide="isLogged">Login</a>
-					<a ng-click="logout()" href="#" ng-show="isLogged">Olá Teste - Logout</a>
+					<a ng-click="logout()" href="#" ng-show="isLogged">Olá {{user.nome}} - Logout</a>
 				</li>
 			</ul>
 		</div>

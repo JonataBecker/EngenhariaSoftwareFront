@@ -145,6 +145,24 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 }
                         })
+                        .state('manager.dimensao-institucional', {
+                                url: '/manager/cadastro/dimensao-institucional',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/manager/dimensao-institucional/manager-dimensao-institucional.html',
+                                                controller: 'ManagerDimensaoInstitucionalController'
+                                        }
+                                }
+                        })
+                        .state('manager.dimensao-institucional.form', {
+                                url: '/form/:iddimensaoinstitucional',
+                                views: {
+                                        'form': {
+                                                templateUrl: 'app/manager/dimensao-institucional/manager-dimensao-institucional-form.html',
+                                                controller: 'ManagerDimensaoInstitucionalFormController'
+                                        }
+                                }
+                        })
                         .state('manager.recursohumano', {
                                 url: '/manager/cadastro/recurso-humano',
                                 views: {
