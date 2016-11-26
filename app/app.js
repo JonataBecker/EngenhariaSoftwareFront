@@ -16,8 +16,27 @@ angular.module('app', ['ui.router', 'ngResource', 'ngCookies'])
                                         }
                                 },
                                 authenticate: false
-
                         })
+                        .state('site.projeto', {
+                                url: '/projeto/:idprojeto',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/home/site-home-busca-projeto.html',
+                                                controller: 'SiteHomeBuscaProjetoController'
+                                        }
+                                },
+                                authenticate: false
+                        })                        
+                        .state('site.colaborador', {
+                                url: '/colaborador/:idcolaborador',
+                                views: {
+                                        'container': {
+                                                templateUrl: 'app/site/home/site-home-busca-colaborador.html',
+                                                controller: 'SiteHomeBuscaColaboradorController'
+                                        }
+                                },
+                                authenticate: false
+                        })                        
                         .state('site.detalhe', {
                                 url: 'projeto/:idprojeto/detalhe',
                                 views: {

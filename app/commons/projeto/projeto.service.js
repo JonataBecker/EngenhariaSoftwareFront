@@ -1,7 +1,7 @@
 angular.module('app').factory('Projeto', function ($q) {
 
 	return {
-		getProjetos: function () {
+		getItens: function () {
 			var q = $q.defer();
 			q.resolve([
 				{
@@ -32,7 +32,7 @@ angular.module('app').factory('Projeto', function ($q) {
 			]);
 			return q.promise;
 		},
-		getProjeto: function (idProjeto) {
+		getItem: function (idProjeto) {
 			var q = $q.defer();
 			q.resolve({
 				nome: "Projeto 1",

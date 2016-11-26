@@ -1,20 +1,30 @@
 angular.module('app').filter('SiteHomeFilter', function () {
-    return function (arr, projeto, conhecimento) {
+    return function (arr, filtros) {
         var ret = [];
-        if (projeto) {
-            arr.filter(function (obj) {
-                return obj.tipo === 'projeto';
-            }).forEach(function (item) {
+        arr.forEach(function (item) {
+            try {
+                filtros.forEach(function (filtro) {
+                    var valido = false;
+                    try {
+                        if (!item[filtro.nome]) {
+                            throw "Item de Filtro válido"
+                        }
+                        filtro.valores.forEach(function (valor) {
+                            if (item[filtro.nome] === valor) {
+                                throw "Item de Filtro válido"
+                            }
+                        });
+                    } catch (err) {
+                        valido = true;
+                    }
+                    if (!valido) {
+                        throw "Filtro válido"
+                    }
+                });
                 ret.push(item);
-            });
-        }
-        if (conhecimento) {
-            arr.filter(function (obj) {
-                return obj.tipo === 'conhecimento';
-            }).forEach(function (item) {
-                ret.push(item);
-            });
-        }
+            } catch (err) {
+            }
+        });
         return ret;
     };
 });
