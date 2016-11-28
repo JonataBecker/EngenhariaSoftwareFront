@@ -256,7 +256,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <button id="button_adicionar_recurso" type="button" class="btn btn-primary">Adicionar</button>
+                                        <button id="button_adicionar_participante" type="button" class="btn btn-primary">Adicionar</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -289,7 +289,55 @@
                             </div>
                         </div>
 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Público Atendido</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label for="publico_atendido" class="form-label">Público atendido:</label>
+                                        <select id="publico_atendido" name="publico_atendido" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="publico_atendido_quantidade" class="form-label">Quantidade:</label>
+                                        <input id="publico_atendido_quantidade" class="form-control" name="quantidade" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button id="button_adicionar_publico_atendido" type="button" class="btn btn-primary">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="70%">Descrição</th>
+                                                <th width="10%">Quantidade</th>
+                                                <th width="20%" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">
+                                                    <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
+                                                    <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-success">Salvar</button>
