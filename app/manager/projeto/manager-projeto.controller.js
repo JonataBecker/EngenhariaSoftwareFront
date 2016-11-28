@@ -4,7 +4,7 @@ angular.module('app').controller('ManagerProjetoController', function ($scope, $
 	loadItens();
 
 	function loadItens() {
-		Projeto.getProjetos().then(function (projetos) {
+		Projeto.getItens().then(function (projetos) {
 			$scope.itens = projetos;
 		})
 	}
