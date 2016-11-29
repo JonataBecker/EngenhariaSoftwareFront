@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade bs-example-modal-lg" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form ng-submit="salvar(model)" class="form-horizontal">
                     <div class="modal-header">
@@ -187,7 +187,211 @@
                                                 <td>Mark</td>
                                                 <td class="text-center">10</td>
                                                 <td class="text-center">10</td>
-                                                <td>
+                                                <td class="text-center">
+                                                    <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
+                                                    <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Participantes</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label for="participante_nome" class="form-label">Nome:</label>
+                                        <select id="participante_nome" name="participante_nome" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="participante_tipo" class="form-label">Tipo:</label>
+                                        <select id="participante_tipo" name="participante_tipo" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="participante_carga_horaria" class="form-label">Carga Horária:</label>
+                                        <input id="participante_carga_horaria" class="form-control" name="carga_horaria" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label for="participante_de" class="form-label">De:</label>
+                                        <select id="participante_de" name="participante_de" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="participante_ate" class="form-label">Até:</label>
+                                        <select id="participante_ate" name="participante_ate" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="participante_situacao" class="form-label">Situação:</label>
+                                        <select id="participante_situacao" name="participante_situacao" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button id="button_adicionar_participante" type="button" class="btn btn-primary">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="20%">Nome</th>
+                                                <th width="20%" class="text-center">Tipo</th>
+                                                <th width="15%" class="text-center">Carga Horária</th>
+                                                <th width="15%" class="text-center">Período</th>
+                                                <th width="15%" class="text-center">Situação</th>
+                                                <th width="15%" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td class="text-center">Tipo 1</td>
+                                                <td class="text-center">20 h</td>
+                                                <td class="text-center">01/01/2016 a 31/12/2016</td>
+                                                <td class="text-center">Situação 1</td>
+                                                <td class="text-center">
+                                                    <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
+                                                    <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Público Atendido</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label for="publico_atendido" class="form-label">Público atendido:</label>
+                                        <select id="publico_atendido" name="publico_atendido" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="publico_atendido_quantidade" class="form-label">Quantidade:</label>
+                                        <input id="publico_atendido_quantidade" class="form-control" name="quantidade" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button id="button_adicionar_publico_atendido" type="button" class="btn btn-primary">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="70%">Descrição</th>
+                                                <th width="10%">Quantidade</th>
+                                                <th width="20%" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">
+                                                    <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
+                                                    <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Produção Acadêmica</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label for="producao_academica_titulo" class="form-label">Título:</label>
+                                        <input id="producao_academica_titulo" class="form-control" name="titulo" type="text">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="producao_academica_producao" class="form-label">Produção:</label>
+                                        <select id="producao_academica_producao" name="producao" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label for="producao_academica_area_conhecimento" class="form-label">Área de conhecimento:</label>
+                                        <select id="producao_academica_area_conhecimento" name="area_conhecimento" class="form-control">
+                                            <option>Selecione</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="producao_academica_ano_publicacao" class="form-label">Título:</label>
+                                        <input id="producao_academica_ano_publicacao" class="form-control" name="ano_publicacao" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button id="button_adicionar_producao_publicacao" type="button" class="btn btn-primary">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="30%">Título</th>
+                                                <th width="20%" class="text-center">Produção</th>
+                                                <th width="25%" class="text-center">Área de Conhecimento</th>
+                                                <th width="10%" class="text-center">Ano Publicação</th>
+                                                <th width="15%" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td class="text-center">Produção 1</td>
+                                                <td class="text-center">Ciência da Computação</td>
+                                                <td class="text-center">2016</td>
+                                                <td class="text-center">
                                                     <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
                                                     <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
                                                 </td>
@@ -199,6 +403,7 @@
                         </div>
 
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-success">Salvar</button>
