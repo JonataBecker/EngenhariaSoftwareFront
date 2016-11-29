@@ -12,7 +12,7 @@ angular.module('app').controller('SiteUsuariosCadastroController', function ($sc
 		Colaborador.getItens().then(function (recursos) {
 			$scope.linkTypesList = recursos;
 		});
-		$scope.academicInstituteList = [{idinstituto: 1, descricao:'ICET'}, {idinstituto: 2, descricao:'ICA'}];
+		$scope.academicInstituteList = [{idinstitutoacademico: 1, descricao:'ICET'}, {idinstitutoacademico: 2, descricao:'ICA'}];
 	}
 
 	$scope.salvar = function (model) {
@@ -21,10 +21,15 @@ angular.module('app').controller('SiteUsuariosCadastroController', function ($sc
 			fn = Usuario.regravar;
 		}
 		fn(model).then(function () {
-			alert('login');
-			// modal.modal('hide');
+			if (!Usuario.isLogged()) {
+				Usuario.login(model.email, model.senha).then(function () {
+					$state.go('site.usuarioslogin');
+				});
+			} else {
+				$state.go('site.usuarioslogin');
+			}
 		}).catch(function (err) {
-			alert(err);
+			alert('Ops. Ocorreu um erro ao realizar o cadastro.');
 		});
 	}
 	
