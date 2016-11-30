@@ -21,9 +21,9 @@
                                         <label for="projeto_situacao" class="form-label">Status:</label>
                                         <select id="projeto_situacao" name="situacao" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Situação 1</option>
+                                            <option>Situação 2</option>
+                                            <option>Situação 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -34,11 +34,11 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label for="projeto_inicio" class="form-label">Início:</label>
-                                        <input id="projeto_inicio" class="form-control" name="inicio" type="text">
+                                        <input id="projeto_inicio" class="form-control" name="inicio" type="date">
                                     </div>
                                     <div class="col-md-3">
                                         <label for="projeto_termino" class="form-label">Término:</label>
-                                        <input id="projeto_termino" class="form-control" name="termino" type="text">
+                                        <input id="projeto_termino" class="form-control" name="termino" type="date">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -60,9 +60,9 @@
                                         <label for="projeto_classificacao" class="form-label">Classificação:</label>
                                         <select id="projeto_classificacao" name="classificacao" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Classificação 1</option>
+                                            <option>Classificação 2</option>
+                                            <option>Classificação 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -75,9 +75,9 @@
                                         <label for="projeto_dimensao_institucional" class="form-label">Dimensão Institucional:</label>
                                         <select id="projeto_dimensao_institucional" name="dimensao_institucional" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Dimensão Institucional 1</option>
+                                            <option>Dimensão Institucional 2</option>
+                                            <option>Dimensão Institucional 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -90,20 +90,62 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label for="projeto_proposta_articulacao" class="form-label">Proposta de articulação:</label>
-                                        <input id="projeto_proposta_articulacao" class="form-control" name="proposta_articulacao" type="text">
+                                        <textarea id="projeto_proposta_articulacao" name="proposta_articulacao" class="form-control" rows="5"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label for="projeto_resultados_esperados" class="form-label">Resultados Esperados:</label>
-                                        <input id="projeto_resultados_esperados" class="form-control" name="resultados_esperados" type="text">
+                                        <textarea id="projeto_resultados_esperados" name="resultados_esperados" class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Cronograma</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label for="cronograma_descricao" class="form-label">Descrição:</label>
+                                        <input id="cronograma_descricao" class="form-control" name="descricao" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="cronograma_inicio" class="form-label">De:</label>
+                                        <input id="cronograma_inicio" class="form-control" name="inicio" type="date">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cronograma_final" class="form-label">Descrição:</label>
+                                        <input id="cronograma_final" class="form-control" name="final" type="date">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <label for="projeto_cronograma" class="form-label">Cronograma:</label>
-                                        <input id="projeto_cronograma" class="form-control" name="cronograma" type="text">
+                                        <button id="button_adicionar_cronograma" type="button" class="btn btn-primary">Adicionar</button>
                                     </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="35%">Período</th>
+                                                <th width="50%">Descrição</th>
+                                                <th width="15%" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01/01/2016 a 31/12/2016</td>
+                                                <td>Cronograma 1</td>
+                                                <td class="text-center">
+                                                    <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
+                                                    <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -116,9 +158,9 @@
                                         <label for="publico_alvo" class="form-label">Público alvo:</label>
                                         <select id="publico_alvo" name="publico_alvo" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Público Alvo 1</option>
+                                            <option>Público Alvo 2</option>
+                                            <option>Público Alvo 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -137,7 +179,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
+                                                <td>Público Alvo 1</td>
                                                 <td class="text-center">
                                                     <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
                                                 </td>
@@ -160,7 +202,7 @@
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <label for="recurso_quantidade" class="form-label">Quantidade:</label>
-                                        <input id="recurso_quantidade" class="form-control" name="quantidade" type="text">
+                                        <input id="recurso_quantidade" class="form-control" name="quantidade" type="number" min="0">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="recurso_valor" class="form-label">Valor:</label>
@@ -178,15 +220,15 @@
                                             <tr>
                                                 <th width="60%">Descrição</th>
                                                 <th width="10%" class="text-center">Quantidade</th>
-                                                <th width="10%" class="text-center">Valor</th>
+                                                <th width="10%" class="text-center">Valor (R$)</th>
                                                 <th width="20%" class="text-center">Ações</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
+                                                <td>Recurso 1</td>
                                                 <td class="text-center">10</td>
-                                                <td class="text-center">10</td>
+                                                <td class="text-center">100,00</td>
                                                 <td class="text-center">
                                                     <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
                                                     <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
@@ -206,51 +248,41 @@
                                         <label for="participante_nome" class="form-label">Nome:</label>
                                         <select id="participante_nome" name="participante_nome" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Participante 1</option>
+                                            <option>Participante 2</option>
+                                            <option>Participante 3</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="participante_tipo" class="form-label">Tipo:</label>
                                         <select id="participante_tipo" name="participante_tipo" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Tipo 1</option>
+                                            <option>Tipo 2</option>
+                                            <option>Tipo 3</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="participante_carga_horaria" class="form-label">Carga Horária:</label>
-                                        <input id="participante_carga_horaria" class="form-control" name="carga_horaria" type="text">
+                                        <label for="participante_carga_horaria" class="form-label">Carga Horária (h):</label>
+                                        <input id="participante_carga_horaria" class="form-control" name="carga_horaria" type="number" min="0">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-4">
                                         <label for="participante_de" class="form-label">De:</label>
-                                        <select id="participante_de" name="participante_de" class="form-control">
-                                            <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                        </select>
+                                        <input id="participante_de" class="form-control" name="participante_de" type="date">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="participante_ate" class="form-label">Até:</label>
-                                        <select id="participante_ate" name="participante_ate" class="form-control">
-                                            <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                        </select>
+                                        <input id="participante_ate" class="form-control" name="participante_ate" type="date">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="participante_situacao" class="form-label">Situação:</label>
                                         <select id="participante_situacao" name="participante_situacao" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Situação 1</option>
+                                            <option>Situação 2</option>
+                                            <option>Situação 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -265,7 +297,7 @@
                                             <tr>
                                                 <th width="20%">Nome</th>
                                                 <th width="20%" class="text-center">Tipo</th>
-                                                <th width="15%" class="text-center">Carga Horária</th>
+                                                <th width="15%" class="text-center">Carga Horária (h)</th>
                                                 <th width="15%" class="text-center">Período</th>
                                                 <th width="15%" class="text-center">Situação</th>
                                                 <th width="15%" class="text-center">Ações</th>
@@ -273,9 +305,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
+                                                <td>Participante 1</td>
                                                 <td class="text-center">Tipo 1</td>
-                                                <td class="text-center">20 h</td>
+                                                <td class="text-center">20</td>
                                                 <td class="text-center">01/01/2016 a 31/12/2016</td>
                                                 <td class="text-center">Situação 1</td>
                                                 <td class="text-center">
@@ -297,14 +329,14 @@
                                         <label for="publico_atendido" class="form-label">Público atendido:</label>
                                         <select id="publico_atendido" name="publico_atendido" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Público Atendido 1</option>
+                                            <option>Público Atendido 2</option>
+                                            <option>Público Atendido 3</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="publico_atendido_quantidade" class="form-label">Quantidade:</label>
-                                        <input id="publico_atendido_quantidade" class="form-control" name="quantidade" type="text">
+                                        <input id="publico_atendido_quantidade" class="form-control" name="quantidade" type="number" min="0">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -323,8 +355,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
-                                                <td class="text-center">123</td>
+                                                <td>Público Atendido 1</td>
+                                                <td class="text-center">100</td>
                                                 <td class="text-center">
                                                     <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
                                                     <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
@@ -348,9 +380,9 @@
                                         <label for="producao_academica_producao" class="form-label">Produção:</label>
                                         <select id="producao_academica_producao" name="producao" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Produção Acadêmica 1</option>
+                                            <option>Produção Acadêmica 2</option>
+                                            <option>Produção Acadêmica 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -359,13 +391,13 @@
                                         <label for="producao_academica_area_conhecimento" class="form-label">Área de conhecimento:</label>
                                         <select id="producao_academica_area_conhecimento" name="area_conhecimento" class="form-control">
                                             <option>Selecione</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option>Área de Conhecimento 1</option>
+                                            <option>Área de Conhecimento 2</option>
+                                            <option>Área de Conhecimento 3</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="producao_academica_ano_publicacao" class="form-label">Título:</label>
+                                        <label for="producao_academica_ano_publicacao" class="form-label">Ano Publicação:</label>
                                         <input id="producao_academica_ano_publicacao" class="form-control" name="ano_publicacao" type="text">
                                     </div>
                                 </div>
@@ -387,9 +419,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
-                                                <td class="text-center">Produção 1</td>
-                                                <td class="text-center">Ciência da Computação</td>
+                                                <td>Título 1</td>
+                                                <td class="text-center">Produção Acadêmica 1</td>
+                                                <td class="text-center">Área de Conhecimento 1</td>
                                                 <td class="text-center">2016</td>
                                                 <td class="text-center">
                                                     <button class="glyphicon glyphicon-pencil btn btn-default" aria-hidden="true"></button>
@@ -431,7 +463,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mark</td>
+                                                <td>Anexo 1</td>
                                                 <td class="text-center">01/01/2016</td>
                                                 <td class="text-center">
                                                     <button class="glyphicon glyphicon-trash btn btn-default" aria-hidden="true"></button>
