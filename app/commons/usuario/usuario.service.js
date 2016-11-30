@@ -1,13 +1,5 @@
 angular.module('app').factory('Usuario', function ($q, $resource, WebService, $cookies) {
 
-	// var usuarios = [{
-	// 	id: 1,
-	// 	email: "teste@teste.com.br",
-	// 	usuario: "admin",
-	// 	senha: "teste",
-	// 	nome: "Admin"
-	// }];
-
 	var url = "usuario";
 
 	return {
@@ -32,6 +24,8 @@ angular.module('app').factory('Usuario', function ($q, $resource, WebService, $c
 		},
 		regravar: function (obj) {
 			var q = $q.defer();
+			var logged = this.getLoggedUser();
+			obj.idusuario = logged.idusuario;
 			WebService.post(url + '/atualiza', obj).then(function(data) {
 				q.resolve(data);
 			}).catch(function(err){
@@ -40,60 +34,40 @@ angular.module('app').factory('Usuario', function ($q, $resource, WebService, $c
 			return q.promise;
 		},
 		isLogged: function () {
-			return $cookies.get('logged-id') ? true : false;
+			return $cookies.get('logged-user') ? true : false;
 		},
 		login: function (usuario_param, senha_param) {
 			var q = $q.defer();
-			this.getUsuarios().then(function (usuarios) {
-				var usuario_logado = usuarios.filter( function(usuario) {
-					return (usuario.usuario == usuario_param || usuario.email == usuario_param) && usuario.senha == senha_param;
-				});				
-				if (usuario_logado.length == 1) {
-					$cookies.put('logged-id', usuario_logado[0].id);
-					q.resolve(usuario_logado);
+			var obj = {usuario:usuario_param, senha: senha_param};
+			WebService.post(url + '/login', obj).then(function(data) {
+				console.log(data);
+				if (data.nome) {
+					$cookies.put('logged-user', data);
+					q.resolve(data);
 				} else {
 					q.resolve(false);
 				}
-			}).catch(function (err) {
+			}).catch(function(err){
 				q.reject(err);
 			});
+			
 			return q.promise;
 		},
 		logout: function () {
-			$cookies.remove('logged-id');
+			$cookies.remove('logged-user');
 		},
 		sendPassword: function (usuario_param) {
 			var q = $q.defer();
-			this.getUsuarios().then(function (usuarios) {
-				var usuario_logado = usuarios.filter( function(usuario) {
-					return (usuario.usuario == usuario_param || usuario.email == usuario_param);
-				});				
-				if (usuario_logado.length == 1) {
-					q.resolve(true);
-				} else {
-					q.resolve(false);
-				}
-			}).catch(function (err) {
+			var obj = {usuario: usuario_param};
+			WebService.post(url + '/recuperar', obj).then(function(data) {
+				q.resolve(data);
+			}).catch(function(err){
 				q.reject(err);
 			});
 			return q.promise;
 		},
 		getLoggedUser: function () {
-			var q = $q.defer();
-			var logged_id = $cookies.get('logged-id');
-			this.getUsuarios().then(function (usuarios) {
-				if (logged_id) {
-					var user = usuarios.filter( function(usuario){
-						return (usuario.id == logged_id);
-					});
-					q.resolve(user[0]);
-				} else {
-					q.reject(err);
-				}
-			}).catch(function (err) {
-				q.reject(err);
-			});
-			return q.promise;
+			return $cookies.get('logged-user');
 		}
 	};
 
