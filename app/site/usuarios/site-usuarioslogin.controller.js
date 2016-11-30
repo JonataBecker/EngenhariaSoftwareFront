@@ -15,13 +15,14 @@ angular.module('app').controller('SiteUsuariosLoginController', function ($scope
 		$scope.error = null;
 		$scope.success = null;
 		Usuario.login($scope.model.usuario, $scope.model.senha).then(function (a) {
-			console.log(a);
 			if (a) {
 				$scope.error = null;
 				$state.go('manager.home');
 			} else {
 				$scope.error = 'Erro ao realizar login. Verifique os dados informados.';
 			}
+		}).catch(function (err) {
+			$scope.error = 'Ops. Ocorreu um erro ao realizar a operação.';
 		});
 	}
 	
@@ -43,6 +44,8 @@ angular.module('app').controller('SiteUsuariosLoginController', function ($scope
 			} else {
 				$scope.error = 'Usuário não encontrado.';
 			}
+		}).catch(function (err) {
+			$scope.error = 'Ops. Ocorreu um erro ao realizar a operação.';
 		});
 	}
 	

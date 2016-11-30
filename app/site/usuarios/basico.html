@@ -41,7 +41,7 @@
             <input type="text" class="form-control" id="cpf-rne" ng-model="model.cpfrne" ng-required="true">
         </div>
     </div>
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-6" ng-controller="SiteUsuariosLoginController" ng-show="user.administrador">
         <div class="checkbox">
             <span class="control-label col-sm-4"> &nbsp;</span>
             <label class="col-sm-8">
