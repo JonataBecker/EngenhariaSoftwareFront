@@ -1,13 +1,10 @@
 angular.module('app').controller('SiteUsuariosLoginController', function ($scope, $state, Usuario) {
-	// console.log($scope);
 	$scope.model = {};
 	$scope.error = null;
 	$scope.isLogged = Usuario.isLogged();
 	$scope.user = null;
 	if ($scope.isLogged) {
-		Usuario.getLoggedUser().then(function(user) {
-			$scope.user = user;
-		});
+		$scope.user = Usuario.getLoggedUser();
 	}
 	// $scope.linkTypesList = ;
 	
@@ -27,7 +24,6 @@ angular.module('app').controller('SiteUsuariosLoginController', function ($scope
 	}
 	
 	$scope.logout = function () {
-		alert('logout');
 		$scope.error = null;
 		$scope.success = null;
 		Usuario.logout();

@@ -40,9 +40,8 @@ angular.module('app').factory('Usuario', function ($q, $resource, WebService, $c
 			var q = $q.defer();
 			var obj = {usuario:usuario_param, senha: senha_param};
 			WebService.post(url + '/login', obj).then(function(data) {
-				console.log(data);
 				if (data.nome) {
-					$cookies.put('logged-user', data);
+					$cookies.put('logged-user', JSON.stringify(data));
 					q.resolve(data);
 				} else {
 					q.resolve(false);
@@ -67,7 +66,7 @@ angular.module('app').factory('Usuario', function ($q, $resource, WebService, $c
 			return q.promise;
 		},
 		getLoggedUser: function () {
-			return $cookies.get('logged-user');
+			return JSON.parse($cookies.get('logged-user'));
 		}
 	};
 
